@@ -20,11 +20,11 @@ Por otro lado, un sistema de pagos anónimo como los billetes de banco y las mon
 
 Aquí se propone un tipo de criptografía fundamentalmente nuevo, que permite un sistema de pagos automatizado con las siguientes propiedades:
 
-(1) Imposibilidad de que terceros determinen el beneficiario, la hora o el monto de los pagos realizados por un individuo.
+1. Imposibilidad de que terceros determinen el beneficiario, la hora o el monto de los pagos realizados por un individuo.
 
-(2) Capacidad de los individuos para proporcionar prueba de pago o para determinar la identidad del beneficiario en circunstancias excepcionales.
+2. Capacidad de los individuos para proporcionar prueba de pago o para determinar la identidad del beneficiario en circunstancias excepcionales.
 
-(3) Capacidad para detener el uso de medios de pago denunciados como robados.
+3. Capacidad para detener el uso de medios de pago denunciados como robados.
 
 ## Criptosistemas de firma ciega
 
@@ -60,11 +60,11 @@ Por lo tanto, el administrador no puede determinar cómo votó nadie.
 
 Los sistemas de firma ciega podrían considerarse como la inclusión de las características de los verdaderos sistemas de firma digital de dos claves combinados de una manera especial con los sistemas de clave pública de estilo conmutativo. Las siguientes tres funciones componen el criptosistema de firma ciega:
 
-(1) Una función de firma s' conocida solo por el firmante, y la inversa públicamente conocida correspondiente s, tal que $s(s^{\prime}(x))=x$ y s no da ninguna pista sobre s'.
+1. Una función de firma s' conocida solo por el firmante, y la inversa públicamente conocida correspondiente s, tal que $s(s^{\prime}(x))=x$ y s no da ninguna pista sobre s'.
 
-(2) Una función de conmutación c y su inversa c', ambas conocidas solo por el proveedor, tal que $c^{\prime}(s^{\prime}(c(x)))=s^{\prime}(x)$ y c(x) y s' no dan ninguna pista sobre x.
+2. Una función de conmutación c y su inversa c', ambas conocidas solo por el proveedor, tal que $c^{\prime}(s^{\prime}(c(x)))=s^{\prime}(x)$ y c(x) y s' no dan ninguna pista sobre x.
 
-(3) Un predicado de verificación de redundancia r, que verifica si hay suficiente redundancia para hacer impráctica la búsqueda de firmas válidas.
+3. Un predicado de verificación de redundancia r, que verifica si hay suficiente redundancia para hacer impráctica la búsqueda de firmas válidas.
 
 ### Protocolo
 
@@ -82,11 +82,11 @@ La forma en que se utilizan estas funciones recuerda a la forma en que se utiliz
 
 Las siguientes propiedades de seguridad se desean del sistema de firma ciega que comprende las funciones y protocolos anteriores:
 
-(1) Firma digital: cualquiera puede verificar que una firma eliminada $s^{\prime}(x)$ fue formada usando la clave privada s' del firmante.
+1. Firma digital: cualquiera puede verificar que una firma eliminada $s^{\prime}(x)$ fue formada usando la clave privada s' del firmante.
 
-(2) Firma ciega: el firmante no sabe nada sobre la correspondencia entre los elementos del conjunto de material firmado eliminado $s^{\prime}(x_{i})$ y los elementos del conjunto de material firmado no eliminado $s^{\prime}(c(x_{i}))$.
+2. Firma ciega: el firmante no sabe nada sobre la correspondencia entre los elementos del conjunto de material firmado eliminado $s^{\prime}(x_{i})$ y los elementos del conjunto de material firmado no eliminado $s^{\prime}(c(x_{i}))$.
 
-(3) Conservación de firmas: el proveedor puede crear como máximo una firma eliminada por cada cosa firmada por el firmante (es decir, incluso con $s^{*}(c(x_{1}))...s^{*}(c(x_{n}))$ y la elección de c, c' y $x_{i}$, es impráctico producir $s^{\prime}(y)$, tal que $r(y)$ e $y\ne x_{i}$).
+3. Conservación de firmas: el proveedor puede crear como máximo una firma eliminada por cada cosa firmada por el firmante (es decir, incluso con $s^{*}(c(x_{1}))...s^{*}(c(x_{n}))$ y la elección de c, c' y $x_{i}$, es impráctico producir $s^{\prime}(y)$, tal que $r(y)$ e $y\ne x_{i}$).
 
 Como es común en el trabajo criptográfico, se ignora la posibilidad de que el mismo número aleatorio pueda generarse de forma independiente.
 
@@ -96,31 +96,31 @@ Un ejemplo de transacción de pago ilustrará cómo los sistemas de firma ciega 
 
 Los actores en el ejemplo a continuación son un banco, un pagador y un beneficiario. El pagador formará un solo billete, el banco lo firmará, el pagador lo eliminará, lo proporcionará al beneficiario y el banco lo liquidará. Lo siguiente rastrea los pasos detallados de una sola transacción de pago:
 
-(1) El pagador elige x al azar tal que $r(x)$, y forma el billete $c(x)$.
+1. El pagador elige x al azar tal que $r(x)$, y forma el billete $c(x)$.
 
-(2) El pagador envía el billete $c(x)$ al banco.
+2. El pagador envía el billete $c(x)$ al banco.
 
-(3) El banco firma el billete, es decir, forma $s^{\prime}(c(x))$, y debita la cuenta del pagador.
+3. El banco firma el billete, es decir, forma $s^{\prime}(c(x))$, y debita la cuenta del pagador.
 
-(4) El banco devuelve el billete firmado, $s^{\prime}(c(x))$, al pagador.
+4. El banco devuelve el billete firmado, $s^{\prime}(c(x))$, al pagador.
 
-(5) El pagador elimina el billete formando $c^{\prime}(s^{\prime}(c(x)))=s^{\prime}(x)$.
+5. El pagador elimina el billete formando $c^{\prime}(s^{\prime}(c(x)))=s^{\prime}(x)$.
 
-(6) El pagador verifica el billete comprobando que $s(s^{\prime}(x))=x$ y se detiene si es falso.
+6. El pagador verifica el billete comprobando que $s(s^{\prime}(x))=x$ y se detiene si es falso.
 
-(7) El pagador realiza el pago algún tiempo después proporcionando el billete $s^{\prime}(x)$ al beneficiario.
+7. El pagador realiza el pago algún tiempo después proporcionando el billete $s^{\prime}(x)$ al beneficiario.
 
-(8) El beneficiario verifica el billete formando $r(s(s^{\prime}(x)))$ y se detiene si es falso.
+8. El beneficiario verifica el billete formando $r(s(s^{\prime}(x)))$ y se detiene si es falso.
 
-(9) El beneficiario envía el billete $s^{\prime}(x)$ al banco.
+9. El beneficiario envía el billete $s^{\prime}(x)$ al banco.
 
-(10) El banco verifica el billete formando $r(s(s^{\prime}(x)))$ y se detiene si es falso.
+10. El banco verifica el billete formando $r(s(s^{\prime}(x)))$ y se detiene si es falso.
 
-(11) El banco agrega el billete a una lista completa de billetes liquidados y se detiene si el billete ya está en la lista.
+11. El banco agrega el billete a una lista completa de billetes liquidados y se detiene si el billete ya está en la lista.
 
-(12) El banco acredita la cuenta del beneficiario.
+12. El banco acredita la cuenta del beneficiario.
 
-(13) El banco informa al beneficiario de la aceptación.
+13. El banco informa al beneficiario de la aceptación.
 
 Observe que, según la propiedad de firma ciega anterior, cuando el banco recibe un billete para ser liquidado del beneficiario en el paso (9), el banco no sabe a qué pagador se emitió originalmente el billete en el paso (4). La firma digital y las propiedades relacionadas de conservación de firmas anteriores aseguran que la falsificación no sea posible.
 
