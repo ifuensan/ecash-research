@@ -70,13 +70,13 @@ Los sistemas de firma ciega podrían considerarse como la inclusión de las cara
 
 La forma en que se utilizan estas funciones recuerda a la forma en que se utilizaron los sobres forrados con papel carbón en el ejemplo descrito anteriormente:
 
-(1) El proveedor elige x al azar tal que $r(x)$, forma $c(x)$ y proporciona $c(x)$ al firmante.
+1. El proveedor elige x al azar tal que $r(x)$, forma $c(x)$ y proporciona $c(x)$ al firmante.
 
-(2) El firmante firma $c(x)$ aplicando s' y devuelve el material firmado $s^{\prime}(c(x))$ al proveedor.
+2. El firmante firma $c(x)$ aplicando s' y devuelve el material firmado $s^{\prime}(c(x))$ al proveedor.
 
-(3) El proveedor elimina el material firmado mediante la aplicación de c', lo que da como resultado $c^{\prime}(s^{\prime}(c(x)))=s^{\prime}(x)$.
+3. El proveedor elimina el material firmado mediante la aplicación de c', lo que da como resultado $c^{\prime}(s^{\prime}(c(x)))=s^{\prime}(x)$.
 
-(4) Cualquiera puede verificar que el material eliminado $s^{\prime}(x)$ fue formado por el firmante, aplicando la clave pública s del firmante y verificando que $r(s(s^{\prime}(x)))$.
+4. Cualquiera puede verificar que el material eliminado $s^{\prime}(x)$ fue formado por el firmante, aplicando la clave pública s del firmante y verificando que $r(s(s^{\prime}(x)))$.
 
 ### Propiedades
 
