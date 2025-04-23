@@ -20,11 +20,11 @@ Por otro lado, un sistema de pagos anónimo como los billetes de banco y las mon
 
 Aquí se propone un tipo de criptografía fundamentalmente nuevo, que permite un sistema de pagos automatizado con las siguientes propiedades:
 
-(1) Imposibilidad de que terceros determinen el beneficiario, la hora o el monto de los pagos realizados por un individuo.
+    (1) Imposibilidad de que terceros determinen el beneficiario, la hora o el monto de los pagos realizados por un individuo.
 
-(2) Capacidad de los individuos para proporcionar prueba de pago o para determinar la identidad del beneficiario en circunstancias excepcionales.
+    (2) Capacidad de los individuos para proporcionar prueba de pago o para determinar la identidad del beneficiario en circunstancias excepcionales.
 
-(3) Capacidad para detener el uso de medios de pago denunciados como robados.
+    (3) Capacidad para detener el uso de medios de pago denunciados como robados.
 
 ## Criptosistemas de Firma Ciega
 
