@@ -20,19 +20,41 @@ Por otro lado, un sistema de pagos anónimo como los billetes de banco y las mon
 
 Aquí se propone un tipo de criptografía fundamentalmente nuevo, que permite un sistema de pagos automatizado con las siguientes propiedades:
 
-    (1) Imposibilidad de que terceros determinen el beneficiario, la hora o el monto de los pagos realizados por un individuo.
+(1) Imposibilidad de que terceros determinen el beneficiario, la hora o el monto de los pagos realizados por un individuo.
 
-    (2) Capacidad de los individuos para proporcionar prueba de pago o para determinar la identidad del beneficiario en circunstancias excepcionales.
+(2) Capacidad de los individuos para proporcionar prueba de pago o para determinar la identidad del beneficiario en circunstancias excepcionales.
 
-    (3) Capacidad para detener el uso de medios de pago denunciados como robados.
+(3) Capacidad para detener el uso de medios de pago denunciados como robados.
 
-## Criptosistemas de Firma Ciega
+## Criptosistemas de firma ciega
 
 El nuevo tipo de criptografía se introducirá primero en términos de una analogía y luego mediante la descripción de sus partes, su uso y las propiedades de seguridad resultantes. No se presenta ningún ejemplo de criptosistema real.
 
-### Idea Básica
+### Idea básica
 
-El concepto de firma ciega puede ilustrarse con un ejemplo tomado del mundo familiar de los documentos en papel. El análogo en papel de una firma ciega se puede implementar con sobres forrados con papel carbón. Escribir una firma en el exterior de dicho sobre deja una copia carbón de la firma en un trozo de papel dentro del sobre. Considere el problema que enfrenta un administrador que desea celebrar una elección por votación secreta, pero los electores no pueden reunirse para depositar sus votos en un solo sombrero. Cada elector está muy preocupado por mantener su voto en secreto para el administrador, y cada elector también exige la capacidad de verificar que su voto sea contado. Se puede obtener una solución mediante el uso de los sobres especiales. Cada elector coloca una papeleta con su voto escrito en ella en un sobre forrado con carbón; coloca el sobre forrado con carbón en un sobre exterior dirigido al administrador, con su propia dirección de devolución; y envía los sobres anidados al administrador. Cuando el administrador recibe un sobre exterior con la dirección de devolución de un elector, el administrador retira el sobre interior forrado con carbón del sobre exterior; firma el exterior del sobre forrado con carbón; y envía el sobre forrado con carbón de vuelta, en un nuevo sobre exterior, a la dirección de devolución en el antiguo sobre exterior. Por lo tanto, solo los electores autorizados reciben papeletas firmadas. ¡Por supuesto, el administrador usa una firma especial que solo es válida para la elección! Cuando un elector recibe un sobre firmado, el elector retira el sobre exterior; verifica la firma en el sobre forrado con carbón; retira la papeleta firmada del sobre forrado con carbón; y envía la papeleta al administrador el día de la elección en un nuevo sobre exterior, sin una dirección de devolución. Cuando el administrador recibe las papeletas, se pueden exhibir públicamente. Cualquiera puede contar las papeletas exhibidas y verificar las firmas en ellas. Si los electores recuerdan algún aspecto identificativo de su papeleta, como el patrón de la fibra del papel, pueden verificar que su papeleta esté en exhibición. Pero dado que el administrador nunca vio realmente las papeletas al firmarlas (y asumiendo que cada firma es idéntica), el administrador no puede conocer ningún aspecto identificativo de la papeleta. Por lo tanto, el administrador no puede saber nada sobre la correspondencia entre los sobres que contienen las papeletas firmadas y las papeletas hechas públicas. Por lo tanto, el administrador no puede determinar cómo votó nadie.
+El concepto de firma ciega puede ilustrarse con un ejemplo tomado del mundo familiar de los documentos en papel. El análogo en papel de una firma ciega se puede implementar con sobres forrados con papel carbón. 
+
+Escribir una firma en el exterior de dicho sobre deja una copia carbón de la firma en un trozo de papel dentro del sobre. Considere el problema que enfrenta un administrador que desea celebrar una elección por votación secreta, pero los electores no pueden reunirse para depositar sus votos en un solo sombrero. 
+
+Cada elector está muy preocupado por mantener su voto en secreto para el administrador, y cada elector también exige la capacidad de verificar que su voto sea contado. 
+
+Se puede obtener una solución mediante el uso de los sobres especiales. Cada elector coloca una papeleta con su voto escrito en ella en un sobre forrado con carbón; coloca el sobre forrado con carbón en un sobre exterior dirigido al administrador, con su propia dirección de devolución; y envía los sobres anidados al administrador. 
+
+Cuando el administrador recibe un sobre exterior con la dirección de devolución de un elector, el administrador retira el sobre interior forrado con carbón del sobre exterior; firma el exterior del sobre forrado con carbón; y envía el sobre forrado con carbón de vuelta, en un nuevo sobre exterior, a la dirección de devolución en el antiguo sobre exterior. 
+
+Por lo tanto, solo los electores autorizados reciben papeletas firmadas. ¡Por supuesto, el administrador usa una firma especial que solo es válida para la elección! 
+
+Cuando un elector recibe un sobre firmado, el elector retira el sobre exterior; verifica la firma en el sobre forrado con carbón; retira la papeleta firmada del sobre forrado con carbón; y envía la papeleta al administrador el día de la elección en un nuevo sobre exterior, sin una dirección de devolución. 
+
+Cuando el administrador recibe las papeletas, se pueden exhibir públicamente. Cualquiera puede contar las papeletas exhibidas y verificar las firmas en ellas. 
+
+Si los electores recuerdan algún aspecto identificativo de su papeleta, como el patrón de la fibra del papel, pueden verificar que su papeleta esté en exhibición. 
+
+Pero dado que el administrador nunca vio realmente las papeletas al firmarlas (y asumiendo que cada firma es idéntica), el administrador no puede conocer ningún aspecto identificativo de la papeleta. 
+
+Por lo tanto, el administrador no puede saber nada sobre la correspondencia entre los sobres que contienen las papeletas firmadas y las papeletas hechas públicas. 
+
+Por lo tanto, el administrador no puede determinar cómo votó nadie.
 
 ### Funciones
 
@@ -68,9 +90,11 @@ Las siguientes propiedades de seguridad se desean del sistema de firma ciega que
 
 Como es común en el trabajo criptográfico, se ignora la posibilidad de que el mismo número aleatorio pueda generarse de forma independiente.
 
-## Sistema de Pagos No Rastreables
+## Sistema de pagos no rastreables
 
-Un ejemplo de transacción de pago ilustrará cómo los sistemas de firma ciega introducidos anteriormente se pueden utilizar para crear un sistema de pagos no rastreable. El concepto crítico es que el banco firmará cualquier cosa con su clave privada, pero cualquier cosa así firmada vale una cantidad fija, digamos \$1. Los actores en el ejemplo a continuación son un banco, un pagador y un beneficiario. El pagador formará un solo billete, el banco lo firmará, el pagador lo eliminará, lo proporcionará al beneficiario y el banco lo liquidará. Lo siguiente rastrea los pasos detallados de una sola transacción de pago:
+Un ejemplo de transacción de pago ilustrará cómo los sistemas de firma ciega introducidos anteriormente se pueden utilizar para crear un sistema de pagos no rastreable. El concepto crítico es que el banco firmará cualquier cosa con su clave privada, pero cualquier cosa así firmada vale una cantidad fija, digamos \$1. 
+
+Los actores en el ejemplo a continuación son un banco, un pagador y un beneficiario. El pagador formará un solo billete, el banco lo firmará, el pagador lo eliminará, lo proporcionará al beneficiario y el banco lo liquidará. Lo siguiente rastrea los pasos detallados de una sola transacción de pago:
 
 (1) El pagador elige x al azar tal que $r(x)$, y forma el billete $c(x)$.
 
