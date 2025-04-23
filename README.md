@@ -9,7 +9,7 @@ A continuación, encontrarás la lista de los papers leídos, organizados por au
 ### David Chaum
 
 * **Blind Signatures for Untraceable Payments:** [Enlace](http://www.hit.bme.hu/~buttyan/courses/BMEVIHIM219/2009/Chaum.BlindSigForPayment.1982.PDF)
-    * [Traducción al Español](papers/chaum_titulo_es.md)
+    * [Traducción al Español](papers/chaum_blind_signatures_es.md)
     * [Resumen](resumenes/chaum_titulo_resumen.md)
 
 ### Otros Autores (Ejemplo)
