@@ -86,7 +86,7 @@ Las siguientes propiedades de seguridad se desean del sistema de firma ciega que
 
 2. Firma ciega: el firmante no sabe nada sobre la correspondencia entre los elementos del conjunto de material firmado eliminado $s^{\prime}(x_{i})$ y los elementos del conjunto de material firmado no eliminado $s^{\prime}(c(x_{i}))$.
 
-3. Conservación de firmas: el proveedor puede crear como máximo una firma eliminada por cada cosa firmada por el firmante (es decir, incluso con $s^{*}(c(x_{1}))...s^{*}(c(x_{n}))$ y la elección de c, c' y $x_{i}$, es impráctico producir $s^{\prime}(y)$, tal que $r(y)$ e $y\ne x_{i}$).
+3. Conservación de firmas: el proveedor puede crear como máximo una firma eliminada por cada cosa firmada por el firmante (es decir, incluso con $s^{*}(c(x_{1}))$...$s^{*}(c(x_{n}))$ y la elección de c, c' y $x_{i}$, es impráctico producir $s^{\prime}(y)$, tal que $r(y)$ e $y\ne x_{i}$).
 
 Como es común en el trabajo criptográfico, se ignora la posibilidad de que el mismo número aleatorio pueda generarse de forma independiente.
 
