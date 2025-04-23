@@ -8,11 +8,16 @@ Santa Bárbara, CA
 
 ## INTRODUCCIÓN
 
-La automatización de la forma en que pagamos por bienes y servicios ya está en marcha, como se puede observar por la variedad y el crecimiento de los servicios de banca electrónica disponibles para los consumidores. 
+La automatización de la forma en que pagamos por bienes y servicios ya está en marcha, como se puede observar por la variedad y el crecimiento de los servicios de banca electrónica disponibles para los consumidores.
+
 La estructura final del nuevo sistema de pagos electrónicos puede tener un impacto sustancial en la privacidad personal, así como en la naturaleza y el alcance del uso delictivo de los pagos. 
-Idealmente, un nuevo sistema de pagos debería abordar estos dos conjuntos de preocupaciones aparentemente conflictivos. 
-Por un lado, el conocimiento por parte de un tercero del beneficiario, el monto y la hora del pago de cada transacción realizada por un individuo puede revelar mucho sobre el paradero, las asociaciones y el estilo de vida del individuo. Por ejemplo, considere los pagos de cosas como transporte, hoteles, restaurantes, películas, teatro, conferencias, comida, productos farmacéuticos, alcohol, libros, publicaciones periódicas, cuotas, contribuciones religiosas y políticas. 
+
+Idealmente, un nuevo sistema de pagos debería abordar estos dos conjuntos de preocupaciones aparentemente conflictivos.
+
+Por un lado, el conocimiento por parte de un tercero del beneficiario, el monto y la hora del pago de cada transacción realizada por un individuo puede revelar mucho sobre el paradero, las asociaciones y el estilo de vida del individuo. Por ejemplo, considere los pagos de cosas como transporte, hoteles, restaurantes, películas, teatro, conferencias, comida, productos farmacéuticos, alcohol, libros, publicaciones periódicas, cuotas, contribuciones religiosas y políticas.
+
 Por otro lado, un sistema de pagos anónimo como los billetes de banco y las monedas adolece de falta de controles y seguridad. Por ejemplo, considere problemas como la falta de prueba de pago, el robo de medios de pago y los pagos en negro por sobornos, evasión de impuestos y mercados negros. 
+
 Aquí se propone un tipo de criptografía fundamentalmente nuevo, que permite un sistema de pagos automatizado con las siguientes propiedades:
 
 (1) Imposibilidad de que terceros determinen el beneficiario, la hora o el monto de los pagos realizados por un individuo.
